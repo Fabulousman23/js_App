@@ -1,19 +1,18 @@
 let pokemonList = [
-  { 
-    name: 'Onix',
+  { name: 'Onix',
     height: 8.8,
     types: ['petrified', 'crawling']
   },
+
   { name: 'Tauros',
     height: 1.4,
     types: ['horned', ' prancing']
   },
-  {
-    name: 'Pikachu',
+  
+  { name: 'Pikachu',
     height: 0.4,
     types: ['electric', 'walking']
   }
 ];
-
 console.log(pokemonList);
 
