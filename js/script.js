@@ -14,5 +14,6 @@ let pokemonList = [
     types: ['electric', 'walking']
   }
 ];
+
 console.log(pokemonList);
 
