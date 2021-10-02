@@ -27,13 +27,14 @@ for (let i = 0; i < pokemonList.length; i++) {
 
 
 // adding conditional to a loop
+let addText = ' (height: ';
 for (let i = 0; i < pokemonList.length; i++) {
   if (pokemonList[i].height > 4) {
-    console.log(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')'+ ' OMG! He\'s huge')
+    console.log(pokemonList[i].name + addText + pokemonList[i].height + ')'+ ' OMG! He\'s huge')
   } else if (pokemonList[i].height < 4 && pokemonList[i].height > 1) {
-    console.log(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')')
+    console.log(pokemonList[i].name + addText + pokemonList[i].height + ')')
   } else {
-    console.log(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')'+ ' He\'s such a baby, so cute')
+    console.log(pokemonList[i].name + addText + pokemonList[i].height + ')'+ ' He\'s such a baby, so cute')
   }
 };
 
