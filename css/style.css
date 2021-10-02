@@ -1,3 +1,17 @@
 body {
-    background-color: lightblue;
+    font-family: sans-serif, Helvetica, Arial;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1 {
+    color: navy;
+    
+}
+
+h1:hover {
+    color: rgb(33, 33, 228);
+    width: auto;
 }
