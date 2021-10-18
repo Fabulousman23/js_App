@@ -19,12 +19,14 @@ console.log(pokemonList);
 
 
 // loop iterates over each items
-for (let i = 0; i < pokemonList.length; i++) {
+function printPokemon(list){
+for (let i = 0; i < list.length; i++) {
   document.write(
-    pokemonList[i].name + ' ' + '(height:' + ' ' + pokemonList[i].height + ')'
+   '<p>' + pokemonList[i].name + ' ' + '(height:' + ' ' + pokemonList[i].height + ')<br>'+ '</p>'
   )
 };
-
+};
+printPokemon(pokemonList);
 
 // adding conditional to a loop
 let addText = ' (height: ';
@@ -37,5 +39,4 @@ for (let i = 0; i < pokemonList.length; i++) {
     console.log(pokemonList[i].name + addText + pokemonList[i].height + ')'+ ' He\'s such a baby, so cute')
   }
 };
-
 
