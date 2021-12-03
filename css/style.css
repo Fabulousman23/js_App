@@ -15,3 +15,22 @@ h1:hover {
     color: rgb(33, 33, 228);
     width: auto;
 }
+
+.button-class {
+    width: 200px;
+    background-color: grey;
+    border: 2px solid  blue;
+    color: whitesmoke;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 3px 2px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5;
+    background-color: rgb(251, 254, 74);
+    cursor: pointer;
+    color: navy;
+    
+}
