@@ -1,77 +1,56 @@
 /* Create list of items */
-   let pokemonProject = (function () {
-   let pokemonList = [
-    { name: 'Onix',
-      height: 8.8,
-      types: ['petrified', ' crawling']
-    },
+let pokemonProject = (function () {
+  let pokemonList = [
+    { name: "Onix", height: 8.8, types: ["petrified", " crawling"] },
 
-    { name: 'Tauros',
-      height: 1.4,
-      types: ['horned', ' prancing']
-    },
+    { name: "Tauros", height: 1.4, types: ["horned", " prancing"] },
 
-    { name: 'Pikachu',
-      height: 0.4,
-      types: ['electric', ' walking']
-    }
+    { name: "Pikachu", height: 0.4, types: ["electric", " walking"] },
   ];
 
   function getAll() {
     return pokemonList;
   }
 
-  function add (pokemon) {
-    pokemonList.push(pokemon);
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types in pokemon"
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("Hey, It's not an object!");
+    }
   }
-
+  function addListItem(pokemon) {
+   let pokemonList = document.querySelector('.pokemon-list');
+   let listItem = document.createElement('li');
+   let button = document.createElement('button');
+   button.classList.add('button-class');
+   button.innerText = pokemon.name;
+   listItem.appendChild(button);
+   pokemonList.appendChild(listItem);
+  }
   return {
     getAll: getAll,
-    add: add
+    add: add,
+    addListItem: addListItem
   };
+})();
 
-  })();
+console.log(pokemonProject.getAll());
+pokemonProject.add({name: 'Charmander', height: 2, types: ['fire']});
 
-  console.log(pokemonProject.getAll());
-  
-  pokemonProject.getAll().forEach(function(pokemon) {
-    document.write('<p class="pokedex-style">' + pokemon.name + '<br>' + 'Height: ' + pokemon.height + 'm<br>' + 'Types: ' + pokemon.types + '</p>');
-});
+console.log(pokemonProject.getAll());
 
 
 
+pokemonProject.getAll().forEach(function(pokemon) {
+ pokemonProject.addListItem(pokemon)
+ });
 
-
-// //  loop iterates using forEach()
-// pokemonList.forEach(function(pokemon) {
-//   console.log(pokemon.name + ' is ' + pokemon.height + ' '+ pokemon.types);
-// });
-
-
-
-// // loop iterates over each items
-
-// function printPokemon(list){
-// for (let i = 0; i < list.length; i++) {
-//   document.write(
-//    '<p>' + pokemonList[i].name + ' ' + '(height:' + ' ' + pokemonList[i].height + ')<br>'+ '</p>'
-//   )
-//   };
-// };
-
-// printPokemon(pokemonList);
-
-// // adding conditional to a loop
-// let addText = ' (height: ';
-// for (let i = 0; i < pokemonList.length; i++) {
-//   if (pokemonList[i].height > 4) {
-//     console.log(pokemonList[i].name + addText + pokemonList[i].height + ')'+ ' OMG! He\'s huge')
-//   } else if (pokemonList[i].height < 4 && pokemonList[i].height > 1) {
-//     console.log(pokemonList[i].name + addText + pokemonList[i].height + ')')
-//   } else {
-//     console.log(pokemonList[i].name + addText + pokemonList[i].height + ')'+ ' He\'s such a baby, so cute')
-//   }
-// };
 
 
 
