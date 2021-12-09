@@ -24,6 +24,7 @@ let pokemonProject = (function () {
       console.log("Hey, It's not an object!");
     }
   }
+  // add items to list 
   function addListItem(pokemon) {
    let pokemonList = document.querySelector('.pokemon-list');
    let listItem = document.createElement('li');
@@ -32,7 +33,13 @@ let pokemonProject = (function () {
    button.innerText = pokemon.name;
    listItem.appendChild(button);
    pokemonList.appendChild(listItem);
-  }
+   button.addEventListener('click' , ()=> {
+    showDetails(pokemon);    
+    });
+} 
+
+let showDetails = (pokemon)=> console.log(pokemon.name, pokemon.height, pokemon.types);
+
   return {
     getAll: getAll,
     add: add,
@@ -41,15 +48,18 @@ let pokemonProject = (function () {
 })();
 
 console.log(pokemonProject.getAll());
-pokemonProject.add({name: 'Charmander', height: 2, types: ['fire']});
+pokemonProject.add({name: 'Charmander', height: 2, types: ['fire', 'aggressive']});
 
 console.log(pokemonProject.getAll());
 
 
-
+// for each function for PokemonList 
 pokemonProject.getAll().forEach(function(pokemon) {
  pokemonProject.addListItem(pokemon)
  });
+
+
+
 
 
 

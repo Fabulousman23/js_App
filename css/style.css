@@ -29,8 +29,11 @@ h1:hover {
     margin: 3px 2px;
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5;
-    background-color: rgb(251, 254, 74);
+    background-color: rgb(241, 235, 59);
     cursor: pointer;
-    color: navy;
-    
+    color: rgb(19, 12, 2);
+}
+
+.button-class:hover {
+    color: rgb(255, 255, 255);
 }
