@@ -15,7 +15,9 @@ h1:hover {
     color: rgb(33, 33, 228);
     width: auto;
 }
-
+li {
+    display: inline-block;
+}
 .button-class {
     width: 200px;
     background-color: grey;
