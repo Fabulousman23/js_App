@@ -1,41 +1,122 @@
 body {
-    font-family: sans-serif, Helvetica, Arial;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    margin: 10px;
+  font-family: sans-serif, Helvetica, Arial;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  margin: 10px;
 }
 
 h1 {
-    color: navy;
-    
+  color: navy;
+  
 }
 
 h1:hover {
-    color: rgb(33, 33, 228);
-    width: auto;
+  color: rgb(33, 33, 228);
+  width: auto;
 }
 li {
-    display: inline-block;
+  display: inline-block;
 }
 .button-class {
-    width: 200px;
-    background-color: grey;
-    border: 2px solid  blue;
-    color: whitesmoke;
-    padding: 20px 40px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 3px 2px;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5;
-    background-color: rgb(241, 235, 59);
-    cursor: pointer;
-    color: rgb(19, 12, 2);
+  width: 200px;
+  background-color: grey;
+  border: 2px solid  blue;
+  color: whitesmoke;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 3px 2px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5;
+  background-color: rgb(241, 235, 59);
+  cursor: pointer;
+  color: rgb(19, 12, 2);
 }
 
 .button-class:hover {
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+#show-dialog, #show-modal {
+background-color: rgb(218, 137, 61);
+border-radius: 10px;
+border: black 2px solid;
+color: rgb(0, 0, 0);
+margin: 10px;
+padding: 20px;
+box-shadow: 1px 1px red;
+}
+
+
+
+#modal-container {
+  position: fixed;
+  padding: 30px;
+
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  
+  /* to show it above other content */
+  z-index: 999; 
+  
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto; 
+  
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  position: fixed;
+  padding: 360px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+  display: block;
 }
