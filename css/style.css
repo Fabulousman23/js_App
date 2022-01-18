@@ -66,3 +66,14 @@ border-bottom: 0;
 border-top: 0;
 }
 
+
+.card {
+  margin: 10px 5px;
+  border: 1px solid var(--primary-color);
+}
+
+div.row {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
