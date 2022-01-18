@@ -2,7 +2,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  //let modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
     if (
@@ -20,8 +19,8 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       let $row = $('.row');
-      let $card = $('<div class="card" style="width:350px"></div');
-      let $image = $('<img class="card-img-top" alt="Card image" style="width: 30%" />');
+      let $card = $('<div class="card" style="width:250px"></div');
+      let $image = $('<img class="card-img-top" alt="Card image" style="width: 40%" />');
 
       $image.attr("src", pokemon.imageUrlFront);
       let $cardBody = $('<div class="card-body"></div>');
