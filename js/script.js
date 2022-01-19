@@ -96,7 +96,7 @@ let pokemonRepository = (function () {
       });
   }
 
-  // show the modal contetn 
+  // show the modal content 
   function showModal(pokemon) {
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
