@@ -1,13 +1,10 @@
 // IIFE function
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   function add(pokemon) {
-    if (
-      typeof pokemon === "object" &&
-      "name" in pokemon
-    ) {
+    if (typeof pokemon === "object" && "name" in pokemon) {
       pokemonList.push(pokemon);
     } else {
       console.log("pokemon is not correct");
@@ -18,9 +15,11 @@ let pokemonRepository = (function () {
   }
   function addListItem(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
-      let $row = $('.row');
+      let $row = $(".row");
       let $card = $('<div class="card" style="width:250px"></div');
-      let $image = $('<img class="card-img-top" alt="Card image" style="width: 40%" />');
+      let $image = $(
+        '<img class="card-img-top" alt="Card image" style="width: 40%" />'
+      );
 
       $image.attr("src", pokemon.imageUrlFront);
       let $cardBody = $('<div class="card-body"></div>');
@@ -49,7 +48,6 @@ let pokemonRepository = (function () {
     });
   }
 
-  
   function loadList() {
     return $.ajax(apiUrl)
       .then(function (json) {
@@ -67,7 +65,6 @@ let pokemonRepository = (function () {
       });
   }
 
-
   function loadDetails(pokemon) {
     let url = pokemon.detailsUrl;
     return $.ajax(url)
@@ -82,7 +79,7 @@ let pokemonRepository = (function () {
         for (let i = 0; i < details.types.length; i++) {
           pokemon.types.push(details.types[i].type.name);
         }
-        
+
         //loop to get the abilities of a selected pokemon
         pokemon.abilities = [];
         for (let i = 0; i < details.abilities.length; i++) {
@@ -96,43 +93,43 @@ let pokemonRepository = (function () {
       });
   }
 
-  // show the modal content 
+  // show the modal content
   function showModal(pokemon) {
-    let modalBody = $('.modal-body');
-    let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    let modalHeader = $(".modal-header");
 
     // clear existing content of modal
     modalTitle.empty();
     modalBody.empty();
-  
 
- //creating element for name in modal content
- let nameElement = $("<h1>" + pokemon.name + "</h1>");
- // // creating img in modal content
- let imageElementFront = $('<img class="modal-img" style="width:50%">');
- imageElementFront.attr("src", pokemon.imageUrlFront);
- let imageElementBack = $('<img class="modal-img" style="width:50%">');
- imageElementBack.attr("src", pokemon.imageUrlBack);
- // //creating element for height in modal content
- let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
- // //creating element for weight in modal content
- let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
- // //creating element for type in modal content
- let typesElement = $("<p>" + "types : " + pokemon.types + "</p>");
- // //creating element for abilities in modal content
- let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
+    //creating element for name in modal content
+    let nameElement = $("<h1>" + pokemon.name + "</h1>");
+    // // creating img in modal content
+    let imageElementFront = $('<img class="modal-img" style="width:50%">');
+    imageElementFront.attr("src", pokemon.imageUrlFront);
+    let imageElementBack = $('<img class="modal-img" style="width:50%">');
+    imageElementBack.attr("src", pokemon.imageUrlBack);
+    // //creating element for height in modal content
+    let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
+    // //creating element for weight in modal content
+    let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
+    // //creating element for type in modal content
+    let typesElement = $("<p>" + "types : " + pokemon.types + "</p>");
+    // //creating element for abilities in modal content
+    let abilitiesElement = $(
+      "<p>" + "abilities : " + pokemon.abilities + "</p>"
+    );
 
- modalTitle.append(nameElement);
- modalBody.append(imageElementFront);
- modalBody.append(imageElementBack);
- modalBody.append(heightElement);
- modalBody.append(weightElement);
- modalBody.append(typesElement);
- modalBody.append(abilitiesElement);
-} 
+    modalTitle.append(nameElement);
+    modalBody.append(imageElementFront);
+    modalBody.append(imageElementBack);
+    modalBody.append(heightElement);
+    modalBody.append(weightElement);
+    modalBody.append(typesElement);
+    modalBody.append(abilitiesElement);
+  }
 
-  
   return {
     add: add,
     getAll: getAll,
@@ -143,15 +140,8 @@ let pokemonRepository = (function () {
   };
 })();
 
-
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-
-
-
-
-
